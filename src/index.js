@@ -1,15 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import ReactDOM from 'react-dom'
 
-import App from './components/app';
-import reducers from './reducers';
+import SearchBar from './components/search_bar'; // make sure the file reference is unique and specific
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// Youtube API Key : AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4	
+const API_KEY = 'AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4'	
+// component something that renders html
+// nest components together to 
+// component is a collection of js that produces html
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+// Create a new component This component should produce some HTML
+// const means it's the final value of the variable (constant) never 
+// going to redefine const (App)
+
+const App = () => {
+    return (
+    <div>
+        <SearchBar />
+    </div>
+    );
+} 
+    // the divs are JSX 
+    // a tree like component
+
+// Take this componenet's HTML and put it on the page (in the DOM)
+
+ReactDOM.render(<App />, document.querySelector('.container'))
+// wrapping it in a JSX tag makes the App an instance
+// whenever you want to make use of a component just wrap it in a JSX tag
+
+// breaking app up into components makes it really easy to reuse them 
+    // like reusing search bars
+// one componenet per file
