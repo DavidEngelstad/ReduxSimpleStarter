@@ -5,6 +5,7 @@ import SearchBar from './components/search_bar'; // make sure the file reference
 
 // Youtube API Key : AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4	
 const API_KEY = 'AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4'	
+
 // component something that renders html
 // nest components together to 
 // component is a collection of js that produces html
