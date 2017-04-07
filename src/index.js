@@ -1,10 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search_bar'; // make sure the file reference is unique and specific
 
 // Youtube API Key : AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4	
 const API_KEY = 'AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4'	
+
+YTSearch({key: API_KEY, term: 'surfboards'}, function (data) {
+  console.log(data);
+});
 
 // component something that renders html
 // nest components together to 
@@ -15,11 +20,11 @@ const API_KEY = 'AIzaSyBy9D_dNHnT-d4C0gzXh0PWL7giguIy2L4'
 // going to redefine const (App)
 
 const App = () => {
-    return (
+  return (
     <div>
-        <SearchBar />
+      <SearchBar />
     </div>
-    );
+  );
 } 
     // the divs are JSX 
     // a tree like component
@@ -33,3 +38,5 @@ ReactDOM.render(<App />, document.querySelector('.container'))
 // breaking app up into components makes it really easy to reuse them 
     // like reusing search bars
 // one componenet per file
+
+// Downward Data Flow: only most parent component should be responsible for fetching data
